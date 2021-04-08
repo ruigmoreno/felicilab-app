@@ -1,5 +1,5 @@
 # Felicilab
-Projeto simples de Escola feito em React Native
+Projeto simples de Escola feito em React Native. Baixe o projeto na branch develop.
 
 ### Pré-requisitos
 
