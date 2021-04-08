@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 import {
-  TouchableOpacity, Dimensions
+  TouchableOpacity, Dimensions, Picker
 } from 'react-native';
-import { Button, Card } from 'react-native-paper';
+import { Button, Card, TextInput } from 'react-native-paper';
 import { CORES } from '../utils/cores';
 
 const Container = styled.View`
@@ -10,9 +10,32 @@ const Container = styled.View`
   margin: 8px 8px;
   margin-top: 16px;
 `;
+const ContainerPicker = styled.View`
+  background-color: ${CORES.BRANCO};
+  margin: 24px 24px;
+  margin-top: 16px;
+`;
+
+const BotaoView = styled.View`
+  margin-right: 34px;
+  align-items: flex-end;
+`;
 
 const ScrollView = styled.ScrollView`
   background-color: ${CORES.BRANCO};
+`;
+
+const TextInputView = styled.View`
+  /* background-color: ${CORES.VERDE}; */
+  margin-left: 16px;
+  margin-right: 16px;
+`;
+
+const TextInputPaper = styled(TextInput)`
+  background-color: ${CORES.BRANCO};
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 24px;
 `;
 
 const ViewLogo = styled.View`
@@ -52,6 +75,10 @@ const CardSemConteudo = styled(Card)`
   padding: 16px;
 `;
 
+const PickerRN = styled(Picker)`
+  height: 80px;
+  width: 150px;
+`;
 const Hyperlink = styled.Text`
    font-weight: bold;
    text-decoration-line: underline;
@@ -59,6 +86,7 @@ const Hyperlink = styled.Text`
 
 const TituloH6 = styled.Text`
   /* styleName: H6; */
+  color: ${(props) => (props.color ? props.color : CORES.PRETO)};
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -69,6 +97,7 @@ const TituloH6 = styled.Text`
 `;
 const Titulo = styled.Text`
   /* styleName: H5; */
+  color: ${(props) => (props.color ? props.color : CORES.PRETO)};
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -80,7 +109,7 @@ const Titulo = styled.Text`
 `;
 const TituloCentralizado = styled.Text`
   /* styleName: H5; */
-  color: ${(props) => (props.color ? props.color : CORES.BRANCO)};
+  color: ${(props) => (props.color ? props.color : CORES.PRETO)};
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -118,10 +147,11 @@ const BotaoLargo = styled(TouchableOpacity)`
 
 const Botao = styled(Button)`
   justify-content: flex-start;
-  align-items: ${(props) => (props.alignItems ? props.alignItems : 'flex-start')};
-  margin: 0 16px;
-  margin-top: 40px;
-  background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : CORES.BRANCO)};
+  align-items: ${(props) => (props.alignItems ? props.alignItems : 'center')};
+  width: 120px;
+  height: 40px;
+  border-radius: 18px;
+  background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : CORES.VERDE)};
  `;
 
 const BotaoLink = styled(Button)`
@@ -131,12 +161,17 @@ const BotaoLink = styled(Button)`
 
 export {
   Container,
+  ContainerPicker,
   ScrollView,
+  TextInputView,
   ViewLogo,
+  BotaoView,
   ConteudoLogo,
   LinhaHorizontal,
   CentralizarItensView,
   SvgView,
+  PickerRN,
+  TextInputPaper,
   Titulo,
   TituloH6,
   TituloCentralizado,

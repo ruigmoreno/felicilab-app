@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar, SafeAreaView } from 'react-native';
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   ScrollView,
@@ -10,9 +10,8 @@ import {
 } from '../../style/style';
 import { CORES } from '../../utils/cores';
 
-// contentInsetAdjustmentBehavior="automatic"
 export default function HomeScreen() {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -22,18 +21,18 @@ export default function HomeScreen() {
           <Container style={{ flexDirection: 'row' }}>
             <BotaoLargo
               backgroundColor={CORES.VERDE}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('CADASTRO_ALUNO')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Cadastrar
                 {'\n'}
                 Aluno
               </TituloCentralizado>
             </BotaoLargo>
             <BotaoLargo
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('CADASTRO_TURMA')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Cadastrar
                 {'\n'}
                 Turma
@@ -43,9 +42,9 @@ export default function HomeScreen() {
           <Container style={{ flexDirection: 'row' }}>
             <BotaoLargo
               backgroundColor={CORES.INDIGO}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('ATUALIZA_ALUNO')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Atualizar
                 {'\n'}
                 Aluno
@@ -53,9 +52,9 @@ export default function HomeScreen() {
             </BotaoLargo>
             <BotaoLargo
               backgroundColor={CORES.INDIGO}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('ATUALIZA_TURMA')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Atualizar
                 {'\n'}
                 Turma
@@ -65,9 +64,9 @@ export default function HomeScreen() {
           <Container style={{ flexDirection: 'row' }}>
             <BotaoLargo
               backgroundColor={CORES.VERMELHO}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('EXCLUI_ALUNO')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Excluir
                 {'\n'}
                 Aluno
@@ -75,9 +74,9 @@ export default function HomeScreen() {
             </BotaoLargo>
             <BotaoLargo
               backgroundColor={CORES.VERMELHO}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('EXCLUI_TURMA')}
             >
-              <TituloCentralizado>
+              <TituloCentralizado color={CORES.BRANCO}>
                 Excluir
                 {'\n'}
                 Turma
